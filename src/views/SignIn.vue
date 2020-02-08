@@ -58,14 +58,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import firebase from "firebase/app";
-import SignInForm from "@/requestform/components/SignInForm.vue";
-import { VFormObj } from "vuetify/lib";
 
 @Component
 export default class SignIn extends Vue {
-  $refs!: {
-    signInForm: VFormObj;
-  };
   email: string = "";
   password: string = "";
   show: boolean = false;
@@ -74,7 +69,7 @@ export default class SignIn extends Vue {
   showPasswordReset = false;
 
   async doSignIn() {
-    if (this.$refs.signInForm.validate()) {
+    if ((this.$refs.signInForm as any).validate()) {
       this.isInProgress = true;
       await this.signIn({ email: this.email, password: this.password })
         .catch(err => {
@@ -104,6 +99,8 @@ export default class SignIn extends Vue {
       });
     console.log("signIn");
   }
-  toastErrorMessage(errorMessage: string) {}
+  toastErrorMessage(errorMessage: string) {
+    console.error(errorMessage);
+  }
 }
 </script>

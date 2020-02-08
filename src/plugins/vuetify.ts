@@ -1,7 +1,7 @@
 import Vue from "vue";
-import Vuetify from "vuetify/lib";
+import Vuetify from "vuetify";
 import ja from "vuetify/src/locale/ja";
-import { Ripple } from "vuetify/lib/directives";
+import "vuetify/dist/vuetify.min.css";
 
 Vue.use(Vuetify);
 

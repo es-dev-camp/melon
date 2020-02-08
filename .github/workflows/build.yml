@@ -1,0 +1,38 @@
+name: build
+
+on:
+  push:
+    branches:
+      - feature/**
+      - sandbox/**
+  pull_request:
+    branches:
+      - master
+      - dev
+      - dev/**
+      - hotfix/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - name: generate .env files
+      run: echo -e ${{ secrets.FIREBASE_ENV_SETTINGS }} > .env
+    - name: npm ci
+      run: npm ci
+      env:
+        CI: true
+    - name: build
+      run: npm run build
+      env:
+        CI: true
+    - name: test
+      run: npm run test
+      env:
+        CI: true

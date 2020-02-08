@@ -8,6 +8,7 @@ import vuetify from "./plugins/vuetify";
 import "@/firebase/firebase";
 
 Vue.config.productionTip = false;
+console.info(process.env.VUE_APP_VERSION);
 
 new Vue({
   router,
