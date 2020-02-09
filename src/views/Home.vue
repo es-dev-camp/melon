@@ -11,7 +11,7 @@
         <v-btn x-large>過去の情報を確認</v-btn>
       </div>
       <div class="mt-12">
-        <v-btn x-large color="error">ログアウト</v-btn>
+        <v-btn x-large color="error" @click="onSignOut">ログアウト</v-btn>
       </div>
     </v-col>
     <v-row justify="center">
@@ -23,6 +23,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { getBlancOrderData, addOrder } from "@/modules/orderModule";
+import { signOut } from "@/modules/signinModule";
 
 @Component
 export default class Home extends Vue {
@@ -31,6 +32,10 @@ export default class Home extends Vue {
 
     await addOrder(order);
     console.log("クリックされました", order);
+  }
+
+  async onSignOut() {
+    await signOut();
   }
 }
 </script>

@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import firebase from "firebase/app";
+import { signIn } from "@/modules/signinModule";
 
 @Component
 export default class SignIn extends Vue {
@@ -71,7 +71,7 @@ export default class SignIn extends Vue {
   async doSignIn() {
     if ((this.$refs.signInForm as any).validate()) {
       this.isInProgress = true;
-      await this.signIn({ email: this.email, password: this.password })
+      await signIn({ email: this.email, password: this.password })
         .catch(err => {
           const errorCodeList = [
             "auth/invalid-email",
@@ -88,16 +88,6 @@ export default class SignIn extends Vue {
           this.isInProgress = false;
         });
     }
-  }
-  async signIn(payload: { email: string; password: string }) {
-    await firebase
-      .auth()
-      .signInWithEmailAndPassword(payload.email, payload.password)
-      .catch(err => {
-        console.log("error: ", err);
-        throw err;
-      });
-    console.log("signIn");
   }
   toastErrorMessage(errorMessage: string) {
     console.error(errorMessage);
