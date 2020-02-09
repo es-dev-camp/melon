@@ -1,16 +1,12 @@
 <template>
   <v-container container--fluid class="pa-0">
-    <v-row no-gutters>
-      <v-col
-        cols="6"
-        style="height:100vh;"
-        class="d-flex align-center justify-center"
-      >
+    <v-row no-gutters style="height:100vh;">
+      <v-col cols="12" md="6" class="d-flex align-center justify-center">
         <img src="@/assets/logo.png" width="80%" />
       </v-col>
       <v-col
-        cols="6"
-        style="height:100vh;"
+        cols="12"
+        md="6"
         class="d-flex align-center justify-center primary"
       >
         <v-form
