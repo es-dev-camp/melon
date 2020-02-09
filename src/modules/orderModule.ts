@@ -2,11 +2,12 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-import { orderCollectionPath, order } from "@/types/order";
+import { orderCollectionPath, order, product } from "@/types/order";
 
 export function getBlancOrderData(): Partial<order> {
   return {
-    item: 99,
+    item: product.other,
+    otherItemText: "",
     count: 0,
     deadline: new Date(),
     isBusiness: false
