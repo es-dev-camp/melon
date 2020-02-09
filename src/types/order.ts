@@ -32,3 +32,11 @@ export enum product {
   spinach = 3,
   other = 99
 }
+
+export const productTypesMap = new Map<product, string>([
+  [product.melon, "メロン"],
+  [product.rice, "米"],
+  [product.blackBean, "黒豆"],
+  [product.spinach, "ほうれん草"],
+  [product.other, "その他"]
+]);

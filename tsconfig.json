@@ -14,8 +14,7 @@
     "baseUrl": ".",
     "types": ["webpack-env", "jest"],
     "paths": {
-      "@/*": ["src/*"],
-      "@common/*": ["common/*"]
+      "@/*": ["src/*"]
     },
     "lib": ["es2018", "dom", "dom.iterable", "scripthost"]
   },
