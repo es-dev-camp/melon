@@ -33,5 +33,5 @@ jobs:
         CI: true
     - name: Firebase deploy
       run: |
-        npx firebase use melon-develop --token ${{ secrets.FIREBASE_TOKEN }}
-        npx firebase deploy --only hosting,firestore --token ${{ secrets.FIREBASE_TOKEN }}
+        ./node_modules/.bin/firebase use melon-develop --token ${{ secrets.FIREBASE_TOKEN }}
+        ./node_modules/.bin/firebase deploy --only hosting,firestore --token ${{ secrets.FIREBASE_TOKEN }}
