@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import Home from "@/views/Home.vue";
+import Ahchive from "@/views/Archive.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
     meta: {
       noAuth: true
     }
+  },
+  {
+    path: "/archive",
+    name: "archive",
+    component: Ahchive
   }
 ];
 
