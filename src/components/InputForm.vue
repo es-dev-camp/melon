@@ -32,6 +32,7 @@
           v-model="deadlineDialog"
           :return-value.sync="deadline"
           persistent
+          width="290px"
         >
           <template v-slot:activator="{ on }">
             <v-text-field
