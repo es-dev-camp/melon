@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -24,7 +24,7 @@ const routes = [
   {
     path: "/signIn",
     component: () =>
-      import(/* webpackChunkName: "SignIn" */ "../views/SignIn.vue"),
+      import(/* webpackChunkName: "SignIn" */ "@/views/SignIn.vue"),
     meta: {
       noAuth: true
     }
@@ -40,8 +40,12 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   const noAuth = to.matched.every(record => record.meta.noAuth);
   firebase.auth().onAuthStateChanged(async user => {
-    console.log(`user:${user} noAuth:${noAuth}`);
+    console.log("login account:", user?.email);
     if (user) {
+      if (to.path === "/signIn") {
+        next("/");
+        return;
+      }
       next();
     } else {
       if (!noAuth) {
