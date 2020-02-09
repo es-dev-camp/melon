@@ -9,13 +9,13 @@
         <strong>{{ name }}</strong>
       </div>
       <div class="my-5">
-        <v-btn x-large width="300px" to="/archive">
+        <v-btn x-large width="300px" @click="inputItemDialog = true">
           <v-icon dark>mdi-pencil</v-icon>
           <v-text>注文内容を入力</v-text>
         </v-btn>
       </div>
       <div class="my-5">
-        <v-btn x-large width="300px">
+        <v-btn x-large width="300px" to="/archive">
           <v-icon dark>mdi-eye</v-icon>
           <v-text>過去の情報を確認</v-text>
         </v-btn>
@@ -35,12 +35,6 @@
       注文を追加しました
       <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
     </v-snackbar>
-    <v-row justify="center">
-      <v-btn width="300px" @click="onClick">
-        <v-icon dark>mdi-wrench</v-icon>
-        <v-text>注文データ追加</v-text>
-      </v-btn>
-    </v-row>
     <v-row>
       <v-col>
         <div class="mt-12">
@@ -69,9 +63,6 @@ export default class Home extends Vue {
   currentOrder = getBlancOrderData();
   name: string = firebase.auth().currentUser.email;
 
-  async onClick() {
-    const order = getBlancOrderData();
-  }
   async onInputDialogSave() {
     await addOrder(this.currentOrder);
     console.log("注文を追加");
