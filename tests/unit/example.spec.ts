@@ -1,10 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
-import Home from "@/views/Home.vue";
+import InputForm from "@/components/InputForm.vue";
 
-describe("Home.vue", () => {
-  it("とりあえずHomeにマウントするだけ", () => {
+describe("components/InputForm.vue", () => {
+  it("とりあえずInputFormにマウントするだけ", () => {
     const msg = "";
-    const wrapper = shallowMount(Home, {
+    const wrapper = shallowMount(InputForm, {
       propsData: { msg }
     });
     expect(wrapper.text()).toMatch(new RegExp(`^${msg}.*`));
