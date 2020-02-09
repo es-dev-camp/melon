@@ -5,19 +5,19 @@
     </v-row>
     <v-col align="center">
       <div>
-        <v-text>ユーザ名: </v-text>
-        <strong>{{ name }}</strong>
+        <span>ユーザ名: </span>
+        <strong>{{ currentUserEmail }}</strong>
       </div>
       <div class="my-5">
         <v-btn x-large width="300px" @click="inputItemDialog = true">
-          <v-icon dark>mdi-pencil</v-icon>
-          <v-text>注文内容を入力</v-text>
+          <v-icon dark class="mr-2">mdi-pencil</v-icon>
+          注文内容を入力
         </v-btn>
       </div>
       <div class="my-5">
         <v-btn x-large width="300px" to="/archive">
-          <v-icon dark>mdi-eye</v-icon>
-          <v-text>過去の情報を確認</v-text>
+          <v-icon dark class="mr-2">mdi-eye</v-icon>
+          過去の情報を確認
         </v-btn>
       </div>
     </v-col>
