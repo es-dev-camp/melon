@@ -61,7 +61,11 @@ export default class Home extends Vue {
   inputItemDialog: boolean = false;
   successSnackbar: boolean = false;
   currentOrder = getBlancOrderData();
-  name: string = firebase.auth().currentUser.email;
+
+  get currentUserEmail() {
+    const currentUser = firebase.auth().currentUser;
+    return currentUser ? currentUser.email : "不明なユーザー"
+  }
 
   async onInputDialogSave() {
     await addOrder(this.currentOrder);
