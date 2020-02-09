@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
+export const orderCollectionPath = "order";
+
 /** 注文情報 */
 export interface order {
   /** 品目 */
@@ -8,15 +10,15 @@ export interface order {
   /** 数量 */
   count: number;
   /** 発送期限 */
-  deadline: firebase.firestore.Timestamp;
+  deadline: firebase.firestore.FieldValue | Date | null;
   /** 卸売 */
   isBusiness: boolean;
   /** 作成日 */
-  createdAt: firebase.firestore.Timestamp;
+  createdAt: firebase.firestore.FieldValue | Date | null;
   /** 作成者アカウント */
   creatorAccount: string;
   /** 更新日 */
-  modifiedAt: firebase.firestore.Timestamp;
+  modifiedAt: firebase.firestore.FieldValue | Date | null;
   /** 更新者アカウント */
   modifierAccount: string;
 }
