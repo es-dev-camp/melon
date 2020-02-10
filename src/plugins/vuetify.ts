@@ -7,8 +7,8 @@ Vue.use(Vuetify);
 
 /* eslint-disable no-unused-vars, @typescript-eslint/camelcase */
 const lightThemeSettings = {
-  primary: "#1F76DD",
-  secondary: "#EDC32F",
+  primary: "#CDFF61",
+  secondary: "#FF9360",
   accent: "#04E3EC",
   neutral: "#113364",
   neutral_light: "#F3F7FB",
