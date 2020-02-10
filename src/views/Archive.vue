@@ -6,7 +6,7 @@
       <orderList :orders="orders.dataSet" />
     </v-col>
     <v-col cols="12" class="mt-10">
-      <v-btn x-large dark color="primary secondary--text" to="/">メニュー画面へ戻る</v-btn>
+      <v-btn x-large dark color="primary secondary--text lighten-2" to="/">メニュー画面へ戻る</v-btn>
     </v-col>
   </v-col>
   </v-container>

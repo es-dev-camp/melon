@@ -9,13 +9,13 @@
         <strong>{{ currentUserEmail }}</strong>
       </div>
       <div class="my-5">
-        <v-btn x-large color="primary" class="secondary--text" width="300px" @click="inputItemDialog = true">
+        <v-btn x-large color="primary" class="secondary--text lighten-2" width="300px" @click="inputItemDialog = true">
           <v-icon dark color="secondary" class="mr-2">mdi-pencil</v-icon>
           注文内容を入力
         </v-btn>
       </div>
       <div class="my-5">
-        <v-btn x-large color="primary" class="secondary--text" width="300px" to="/archive">
+        <v-btn x-large color="primary" class="secondary--text lighten-2" width="300px" to="/archive">
           <v-icon dark color="secondary" class="mr-2">mdi-eye</v-icon>
           過去の情報を確認
         </v-btn>
