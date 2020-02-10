@@ -1,15 +1,15 @@
 <template>
-  <v-col cols="12" align="center">
-    <v-row>
-      <h1>注文入力履歴</h1>
-    </v-row>
-    <v-row>
+<v-container>
+  <v-col align="center">
+    <h1>注文入力履歴</h1>
+    <v-col cols="12">
       <orderList :orders="orders.dataSet" />
-    </v-row>
-    <v-row class="mt-10">
-      <v-btn x-large to="/">メニュー画面へ戻る</v-btn>
-    </v-row>
+    </v-col>
+    <v-col cols="12" class="mt-10">
+      <v-btn x-large dark color="primary secondary--text" to="/">メニュー画面へ戻る</v-btn>
+    </v-col>
   </v-col>
+  </v-container>
 </template>
 
 <script lang="ts">
