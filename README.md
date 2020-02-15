@@ -1,5 +1,7 @@
 # farms_form
 
+![deploy](https://github.com/es-dev-camp/melon/workflows/deploy/badge.svg)
+
 melon を販売します
 
 ## Project setup
