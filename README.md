@@ -4,6 +4,13 @@
 
 melon を販売します
 
+## get .env secret files
+
+ask [contributors](https://github.com/es-dev-camp/melon/graphs/contributors)
+
+- .env.develop.local
+- .env.production.local
+
 ## Project setup
 ```
 npm install
@@ -21,7 +28,7 @@ npm run build
 
 ### Run your unit tests
 ```
-npm run test:unit
+npm run test
 ```
 
 ### Lints and fixes files
