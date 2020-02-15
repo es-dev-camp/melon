@@ -38,3 +38,22 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## GitHub Actions settings
+
+### Secret
+
+- FIREBASE_TOKEN
+  ```
+  firebase login:ci > FIREBASE_TOKEN
+  ```
+- FIREBASE_ENV_SETTINGS
+  ```
+  const fs = require('fs');
+  
+  const content = fs.readFileSync('.env.production.local').toString('utf8');
+  const secret = content.replace(/\n/gi, '\\n');
+  console.log(secret);
+
+  // sample: VUE_APP_API_KEY="test"\nVUE_APP_ABC="ABC"\nVUE_APP_...
+  ```
